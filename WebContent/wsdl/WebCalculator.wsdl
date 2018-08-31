@@ -19,6 +19,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="divide">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divideResponse">
+    <complexType>
+     <sequence>
+      <element name="divideReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="operation">
     <complexType>
      <sequence>
@@ -33,12 +48,144 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="power">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="powerResponse">
+    <complexType>
+     <sequence>
+      <element name="powerReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtract">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtractResponse">
+    <complexType>
+     <sequence>
+      <element name="subtractReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiply">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplyResponse">
+    <complexType>
+     <sequence>
+      <element name="multiplyReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mod">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modResponse">
+    <complexType>
+     <sequence>
+      <element name="modReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
+
+   <wsdl:message name="subtractRequest">
+
+      <wsdl:part element="impl:subtract" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyRequest">
+
+      <wsdl:part element="impl:multiply" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideRequest">
+
+      <wsdl:part element="impl:divide" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="powerRequest">
+
+      <wsdl:part element="impl:power" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="operationRequest">
+
+      <wsdl:part element="impl:operation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideResponse">
+
+      <wsdl:part element="impl:divideResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="powerResponse">
+
+      <wsdl:part element="impl:powerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
 
    <wsdl:message name="operationResponse">
 
       <wsdl:part element="impl:operationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtractResponse">
+
+      <wsdl:part element="impl:subtractResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modResponse">
+
+      <wsdl:part element="impl:modResponse" name="parameters">
 
       </wsdl:part>
 
@@ -52,9 +199,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="operationRequest">
+   <wsdl:message name="multiplyResponse">
 
-      <wsdl:part element="impl:operation" name="parameters">
+      <wsdl:part element="impl:multiplyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modRequest">
+
+      <wsdl:part element="impl:mod" name="parameters">
 
       </wsdl:part>
 
@@ -82,6 +237,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="divide">
+
+         <wsdl:input message="impl:divideRequest" name="divideRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divideResponse" name="divideResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="operation">
 
          <wsdl:input message="impl:operationRequest" name="operationRequest">
@@ -89,6 +256,54 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:operationResponse" name="operationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="power">
+
+         <wsdl:input message="impl:powerRequest" name="powerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:powerResponse" name="powerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtract">
+
+         <wsdl:input message="impl:subtractRequest" name="subtractRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtractResponse" name="subtractResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiply">
+
+         <wsdl:input message="impl:multiplyRequest" name="multiplyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplyResponse" name="multiplyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mod">
+
+         <wsdl:input message="impl:modRequest" name="modRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modResponse" name="modResponse">
 
        </wsdl:output>
 
@@ -118,6 +333,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="divide">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divideRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divideResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="operation">
 
          <wsdlsoap:operation soapAction=""/>
@@ -129,6 +362,78 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="operationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="power">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="powerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="powerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtract">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtractRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtractResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiply">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mod">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modResponse">
 
             <wsdlsoap:body use="literal"/>
 

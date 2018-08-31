@@ -14,10 +14,30 @@
         <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
         <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
       </operation>
+      <operation xmlns:operNS="http://me.org" xmlns:retNS="http://me.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="divide" qname="operNS:divide" returnQName="retNS:divideReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
       <operation xmlns:operNS="http://me.org" xmlns:retNS="http://me.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="operation" qname="operNS:operation" returnQName="retNS:operationReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:param" type="tns:string"/>
       </operation>
-      <parameter name="allowedMethods" value="add operation"/>
+      <operation xmlns:operNS="http://me.org" xmlns:retNS="http://me.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="power" qname="operNS:power" returnQName="retNS:powerReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://me.org" xmlns:retNS="http://me.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="subtract" qname="operNS:subtract" returnQName="retNS:subtractReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://me.org" xmlns:retNS="http://me.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="multiply" qname="operNS:multiply" returnQName="retNS:multiplyReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://me.org" xmlns:retNS="http://me.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="mod" qname="operNS:mod" returnQName="retNS:modReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://me.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="add mod subtract divide power multiply operation"/>
 
   </service>
 </deployment>

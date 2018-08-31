@@ -37,10 +37,30 @@
    <ns2:parameter qname="ns1:a" type="xsd:int"/>
    <ns2:parameter qname="ns1:b" type="xsd:int"/>
   </ns2:operation>
-  <ns1:operation name="operation" qname="ns2:operation" returnQName="ns2:operationReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:param" type="xsd:string"/>
+  <ns1:operation name="divide" qname="ns2:divide" returnQName="ns2:divideReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:a" type="xsd:int"/>
+   <ns1:parameter qname="ns2:b" type="xsd:int"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="add operation"/>
+  <ns1:operation name="operation" qname="ns3:operation" returnQName="ns3:operationReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:param" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="power" qname="ns4:power" returnQName="ns4:powerReturn" returnType="xsd:double" soapAction="" xmlns:ns4="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:a" type="xsd:int"/>
+   <ns1:parameter qname="ns4:b" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="subtract" qname="ns5:subtract" returnQName="ns5:subtractReturn" returnType="xsd:int" soapAction="" xmlns:ns5="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:a" type="xsd:int"/>
+   <ns1:parameter qname="ns5:b" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="multiply" qname="ns6:multiply" returnQName="ns6:multiplyReturn" returnType="xsd:int" soapAction="" xmlns:ns6="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns6:a" type="xsd:int"/>
+   <ns1:parameter qname="ns6:b" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="mod" qname="ns7:mod" returnQName="ns7:modReturn" returnType="xsd:int" soapAction="" xmlns:ns7="http://me.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:a" type="xsd:int"/>
+   <ns1:parameter qname="ns7:b" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="add mod subtract divide power multiply operation"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="WebCalculator"/>
   <ns1:parameter name="className" value="org.me.WebCalculator"/>
